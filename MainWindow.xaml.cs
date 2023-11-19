@@ -22,7 +22,8 @@ namespace WPU221_1
     {
         public MainWindow()
         {
-            InitializeComponent();            
+            InitializeComponent(); 
+            
         }
     }
 }

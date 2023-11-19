@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPU221_1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Simplenote" Height="450" Width="800" WindowStartupLocation="CenterScreen" 
+        >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*" />
@@ -24,10 +25,21 @@
         <!-- Вторая строка 
         -->
         
-        <ListBox x:Name="lbMenu"  Grid.Column="0" Grid.Row="1"/>
-        <TextBox x:Name="tbInfo" Grid.Column="1" Grid.Row="1"/>
+        <ListBox x:Name="lbMenu"  Grid.Column="0" Grid.Row="1" SelectionChanged="lbMenu_SelectionChanged"/>
+        <TextBox x:Name="tbInfo" Grid.Column="1" Grid.Row="1" IsReadOnly="True"/>
         <!-- Третья строка -->
-        <TextBlock Grid.Row="2" Text="Строка 3" />
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <RadioButton Content="Русский" x:Name="rbRus" Checked="rbRus_Checked" IsChecked="True" Margin="10"/>
+            <RadioButton Content="English" x:Name="rbEng" Checked="rbEng_Checked" Margin="10"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="btnCreate" Content="Создать" Width="100" Height="35" Margin="10"/>
+            <Button x:Name="btnUpdate" Content="Изменить" Width="100" Height="35" Margin="10"/>
+            <Button x:Name="btnDelete" Content="Удалить" Width="100" Height="35" Margin="10"/>
+        </StackPanel>
+
     </Grid>
 
 </Window>

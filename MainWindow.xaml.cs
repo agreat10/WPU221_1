@@ -23,7 +23,22 @@ namespace WPU221_1
         public MainWindow()
         {
             InitializeComponent(); 
-            ///////
+            
+        }
+
+        private void lbMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void rbRus_Checked(object sender, RoutedEventArgs e)
+        {
+            Title = "RU";
+        }
+
+        private void rbEng_Checked(object sender, RoutedEventArgs e)
+        {
+            Title = "Eng";
         }
     }
 }

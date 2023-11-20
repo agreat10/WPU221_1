@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPU221_1.Model;
+using static Azure.Core.HttpHeader;
 
 namespace WPU221_1
 {
@@ -20,12 +22,22 @@ namespace WPU221_1
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        ///Для наглядности заполнения ListBox
+        /// </summary>
         List<string> lis;  
         public MainWindow()
         {
             InitializeComponent();
-            lis = new List<string>{ "1 Заметка", "2 Заметка", "3 Заметка", "4 Заметка" };
+            //Заполняем
+            lis = new List<string> { "1 Заметка", "2 Заметка", "3 Заметка", "4 Заметка" };
+            //Привязываем
             lbMenu.ItemsSource = lis;
+
+
+
+
+
         }
 
         private void lbMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)

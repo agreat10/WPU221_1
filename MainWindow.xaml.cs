@@ -29,11 +29,20 @@ namespace WPU221_1
         {
             InitializeComponent();
             //Заполняем
-            lis = new List<string> { "1 Заметка", "2 Заметка", "3 Заметка", "4 Заметка" };
+            //lis = new List<string> { "1 Заметка", "2 Заметка", "3 Заметка", "4 Заметка" };
             //Привязываем
-            lbMenu.ItemsSource = lis;
+            //lbMenu.ItemsSource = lis;
 
+            // Создание коллекции объектов класса Note
+            List<Note> notes = new List<Note>
+            {
+                new Note { Name = "Заметка 1", Description = "Описание заметки 1" },
+                new Note { Name = "Заметка 2", Description = "Описание заметки 2" },
+                new Note { Name = "Заметка 3", Description = "Описание заметки 3" }
+            };
 
+            // Привязка коллекции к ListBox
+            lbMenu.ItemsSource = notes;
 
 
 
@@ -41,7 +50,7 @@ namespace WPU221_1
 
         private void lbMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            tbInfo.GetBindingExpression(TextBox.TextProperty)?.UpdateTarget();
         }
 
         private void rbRus_Checked(object sender, RoutedEventArgs e)
@@ -71,4 +80,12 @@ namespace WPU221_1
 
         }
     }
+    // Определение класса Note
+    public class Note
+    {
+        public string Name { get; set; }
+        public string Description { get; set; }
+    }
+
+    
 }

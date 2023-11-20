@@ -25,20 +25,14 @@
         <!-- Вторая строка 
         -->
 
-        <ListBox x:Name="lbMenu"  Grid.Column="0" Grid.Row="1" SelectionChanged="lbMenu_SelectionChanged"/>
+        <ListBox x:Name="lbMenu"  Grid.Column="0" Grid.Row="1" 
+                 SelectionChanged="lbMenu_SelectionChanged"
+                 DisplayMemberPath="Name"/>
 
-        <!--<StackPanel Grid.Row="1" Grid.Column="0" Margin="2,2,2,2" Background="Azure" >
-            <TextBlock Text=" Заметка 1 " Margin="3" FontSize="16" />
-            <TextBox x:Name="z1TextBox" Margin="3" FontSize ="16"/>
-            <TextBlock Text=" Заметка 2 " Margin="3" FontSize="16"/>
-            <TextBox x:Name="z2TextBox" Margin="3" FontSize ="16"/>
-            <TextBlock Text=" Заметка 3 " Margin="3" FontSize="16"/>
-            <TextBox x:Name="z3TextBox" Margin="3" FontSize ="16"/>
-            <TextBlock Text=" Заметка 4 " Margin="3" FontSize="16"/>
-            <TextBox x:Name="z4TextBox" Margin="3" FontSize ="16"/>
-        </StackPanel>-->
+        
 
-        <TextBox x:Name="tbInfo" Grid.Column="1" Grid.Row="1" IsReadOnly="True" Background="#FFB7DBED"/>
+        <TextBox x:Name="tbInfo" Grid.Column="1" Grid.Row="1" IsReadOnly="True"
+                 Text="{Binding ElementName=lbMenu, Path=SelectedItem.Description}"/>
         <!-- Третья строка -->
         
         <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">

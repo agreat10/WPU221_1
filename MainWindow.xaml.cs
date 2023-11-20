@@ -20,12 +20,23 @@ namespace WPU221_1
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+
+        /// <summary>
+        ///Для наглядности заполнения ListBox
+        /// </summary>
+        List<string> lis;
         public MainWindow()
         {
             InitializeComponent();
-            
-            
+            //Заполняем
+            lis = new List<string> { "1 Заметка", "2 Заметка", "3 Заметка", "4 Заметка" };
+            //Привязываем
+            lbMenu.ItemsSource = lis;
+
+
+
+
+
         }
 
         private void lbMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)

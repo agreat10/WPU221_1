@@ -20,9 +20,11 @@ namespace WPU221_1
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
-            InitializeComponent(); 
+            InitializeComponent();
+            
             
         }
 
@@ -34,11 +36,28 @@ namespace WPU221_1
         private void rbRus_Checked(object sender, RoutedEventArgs e)
         {
             Title = "RU";
+            
         }
 
         private void rbEng_Checked(object sender, RoutedEventArgs e)
         {
             Title = "Eng";
+            
+        }
+
+        private void btnCreate_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

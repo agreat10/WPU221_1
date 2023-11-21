@@ -61,11 +61,20 @@ namespace WPU221_1.Languages {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Create.
+        ///   Ищет локализованную строку, похожую на Создать.
         /// </summary>
         public static string BtnCreate {
             get {
                 return ResourceManager.GetString("BtnCreate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Изменить.
+        /// </summary>
+        public static string BtnUpdate {
+            get {
+                return ResourceManager.GetString("BtnUpdate", resourceCulture);
             }
         }
     }

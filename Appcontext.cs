@@ -21,7 +21,8 @@ namespace WPU221_1
         //Класс отвечает за установку параметров подключения
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(LocalDb)\\SQLEXPRESS;Initial Catalog=SimplyNote;Integrated Security=True;Trust Server Certificate=True;");
+           
+            optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=SimplyNote;Integrated Security=True; Trust Server Certificate=True;");
         }
     }
 }

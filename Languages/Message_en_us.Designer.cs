@@ -68,5 +68,14 @@ namespace WPU221_1.Languages {
                 return ResourceManager.GetString("BtnCreate", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Update.
+        /// </summary>
+        public static string BtnUpdate {
+            get {
+                return ResourceManager.GetString("BtnUpdate", resourceCulture);
+            }
+        }
     }
 }

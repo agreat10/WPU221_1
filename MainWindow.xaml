@@ -5,8 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPU221_1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Simplenote" Height="450" Width="800" WindowStartupLocation="CenterScreen" 
+        >
     <Grid>
-        <Button x:Name="qqq"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="0.3*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="0.7*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <!-- Первая строка -->
+        <TextBlock Grid.Row="0" Text="Строка 1" FontSize ="16"/>
+
+        <!-- Вторая строка 
+        -->
+
+        <ListBox x:Name="lbMenu"  Grid.Column="0" Grid.Row="1" 
+                 SelectionChanged="lbMenu_SelectionChanged"
+                 DisplayMemberPath="Name"/>
+
+        
+
+        <TextBox x:Name="tbInfo" Grid.Column="1" Grid.Row="1" IsReadOnly="True"
+                 Text="{Binding ElementName=lbMenu, Path=SelectedItem.Description}"/>
+        <!-- Третья строка -->
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <RadioButton Content="Русский" x:Name="rbRus" Checked="rbRus_Checked" IsChecked="True" Margin="10"/>
+            <RadioButton Content="English" x:Name="rbEng" Checked="rbEng_Checked" Margin="10"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="btnCreate" Content="Создать" Width="100" Height="35" Margin="10" Click="btnCreate_Click"/>
+            <Button x:Name="btnUpdate" Content="Изменить" Width="100" Height="35" Margin="10" Click="btnUpdate_Click"/>
+            <Button x:Name="btnDelete" Content="Удалить" Width="100" Height="35" Margin="10" Click="btnDelete_Click"/>
+        </StackPanel>
+
     </Grid>
+
 </Window>

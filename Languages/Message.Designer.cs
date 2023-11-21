@@ -61,7 +61,7 @@ namespace WPU221_1.Languages {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на кнопка.
+        ///   Ищет локализованную строку, похожую на Создать.
         /// </summary>
         public static string buttonres {
             get {

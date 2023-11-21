@@ -13,7 +13,7 @@ namespace WPU221_1
         public AppContext()
         {
             //Database.EnsureDeleted(); //Удаляет базу с указанным названием
-            Database.EnsureCreated(); //Создает базу с указанным названием
+           Database.EnsureCreated(); //Создает базу с указанным названием
         }
         //Класс сущностей: сколько таблиц в базе данных, столько же строк с сущностями
         public DbSet<Note> Notes { get; set; } = null!;
@@ -21,7 +21,7 @@ namespace WPU221_1
         //Класс отвечает за установку параметров подключения
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=AGREAT\\SQLEXPRESS;Initial Catalog=SimplyNote;Integrated Security=True;Trust Server Certificate=True;");
+            optionsBuilder.UseSqlServer(@"Server=(LocalDb)\\SQLEXPRESS;Initial Catalog=SimplyNote;Integrated Security=True;Trust Server Certificate=True;");
         }
     }
 }

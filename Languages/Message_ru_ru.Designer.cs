@@ -22,14 +22,14 @@ namespace WPU221_1.Languages {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Message {
+    public class Message_ru_ru {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Message() {
+        internal Message_ru_ru() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace WPU221_1.Languages {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WPU221_1.Languages.Message", typeof(Message).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WPU221_1.Languages.Message_ru_ru", typeof(Message_ru_ru).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,11 +61,11 @@ namespace WPU221_1.Languages {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Создать.
+        ///   Ищет локализованную строку, похожую на Create.
         /// </summary>
-        public static string buttonres {
+        public static string BtnCreate {
             get {
-                return ResourceManager.GetString("buttonres", resourceCulture);
+                return ResourceManager.GetString("BtnCreate", resourceCulture);
             }
         }
     }

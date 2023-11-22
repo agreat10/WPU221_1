@@ -31,7 +31,7 @@ namespace WPU221_1
                     notes = new ObservableCollection<Note>();
                     foreach (var note in tempNote)
                     {
-                        Note tempnote = new Note { Description = note.Description, Name = note.Name };
+                        Note tempnote = new Note { Description = note.Description, Name = note.Name, Id = note.Id};
                         notes.Add(tempnote);
                     }
                 }

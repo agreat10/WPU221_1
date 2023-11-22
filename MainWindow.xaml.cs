@@ -24,6 +24,7 @@ namespace WPU221_1
     public partial class MainWindow : Window
     {
         Note selectedNote;
+        private int selectLBindex;
         public DContext dContext { get; set; }
 
         public MainWindow()
@@ -43,9 +44,7 @@ namespace WPU221_1
             tbInfo.GetBindingExpression(TextBox.TextProperty)?.UpdateTarget();
             // Получение выбранного объекта из ListBox
             selectedNote = (Note)lbMenu.SelectedItem;
-            Title = $"{selectedNote.Id} {selectedNote.Name} {selectedNote.Description}";
-
-            // Дальнейшая обработка выбранного объекта...
+            selectLBindex = lbMenu.SelectedIndex;
         }
 
         private void rbRus_Checked(object sender, RoutedEventArgs e)
@@ -62,12 +61,25 @@ namespace WPU221_1
 
         private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
-            NoteController nc = new NoteController("Create", selectedNote);
+            NoteController nc = new NoteController("Create", selectedNote);            
+            dContext.notes.Clear();
+            using (AppContext db = new AppContext())
+            {
+                var tempList = db.Notes.ToList();
+                foreach (var note in tempList) { dContext.notes.Add(note); }
+            }
+            //lbMenu.SelectedIndex = selectLBindex;
         }
 
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
             NoteController nc = new NoteController("Update", selectedNote);
+            dContext.notes.Clear();
+            using (AppContext db = new AppContext())
+            {
+                var tempList = db.Notes.ToList();
+                foreach (var note in tempList) { dContext.notes.Add(note); }
+            }
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)

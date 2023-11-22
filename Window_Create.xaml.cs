@@ -29,7 +29,18 @@ namespace WPU221_1
 
         private void btnCreates_Click(object sender, RoutedEventArgs e)
         {
-
+            using (AppContext db = new AppContext())
+            {
+                Note note = new Note 
+                { 
+                    Name = tbName.Text,
+                    Description = tbDescription.Text
+                };
+                db.Notes.Add(note);
+                db.SaveChanges();
+                //var notes = db.Notes.ToList();
+            }
+            this.Close();
         }
 
         private void btnNo_Click(object sender, RoutedEventArgs e)

@@ -20,16 +20,34 @@ namespace WPU221_1
     /// </summary>
     public partial class Window_Update : Window
     {
+        Note _notes;
         public Window_Update(Note note)
         {
             InitializeComponent();
             tbName.Text = note.Name;
             tbDescription.Text = note.Description;
+            _notes = note;
         }
 
         private void btnUpdates_Click(object sender, RoutedEventArgs e)
-        {
-
+        {      
+            using(AppContext db = new AppContext())
+            {
+                try
+                { 
+                    var tempnote = db.Notes.Find(_notes.Id);
+                    if (tempnote is null)
+                    { this.Close(); return; }
+                    tempnote.Name = tbName.Text;
+                    tempnote.Description = tbDescription.Text;
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }   
+            }
+            this.Close();
         }
 
         private void btnNo_Click(object sender, RoutedEventArgs e)

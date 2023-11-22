@@ -34,7 +34,9 @@ namespace WPU221_1.Controller
 
         private void Create()
         {
-            MessageBox.Show($"Create, {_selectedNote.Name}");
+            //MessageBox.Show($"Create, {_selectedNote.Name}");
+            Window_Create wc = new Window_Create();
+            wc.ShowDialog();
         }
     }
 }

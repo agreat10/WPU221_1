@@ -27,7 +27,8 @@
 
         <ListBox x:Name="lbMenu"  Grid.Column="0" Grid.Row="1"
                  DisplayMemberPath="Name"
-                 SelectionChanged="lbMenu_SelectionChanged"/>
+                 SelectionChanged="lbMenu_SelectionChanged"
+                 SelectedIndex="0"/>
 
         
 
@@ -37,12 +38,12 @@
         <!-- Третья строка -->
         
         <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <RadioButton Content="Русский" x:Name="rbRus" Checked="rbRus_Checked" IsChecked="True" Margin="10"/>
+            <RadioButton Content="Русский" x:Name="rbRus" Checked="rbRus_Checked" IsChecked="False" Margin="10"/>
             <RadioButton Content="English" x:Name="rbEng" Checked="rbEng_Checked" Margin="10"/>
         </StackPanel>
         
         <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button x:Name="btnCreate" Content="" Width="100" Height="35" Margin="10" Click="btnCreate_Click"/>
+            <Button x:Name="btnCreate" Content="Добавить" Width="100" Height="35" Margin="10" Click="btnCreate_Click"/>
             <Button x:Name="btnUpdate" Content="Изменить" Width="100" Height="35" Margin="10" Click="btnUpdate_Click"/>
             <Button x:Name="btnDelete" Content="Удалить" Width="100" Height="35" Margin="10" Click="btnDelete_Click"/>
         </StackPanel>

@@ -28,14 +28,7 @@ namespace WPU221_1
 
         public MainWindow()
         {
-            InitializeComponent();
-            // Создание коллекции объектов класса Note
-            //List<Note> notes = new List<Note>
-            // {
-            //     new Note { Name = "Заметка 1", Description = "Описание заметки 1" },
-            //     new Note { Name = "Заметка 2", Description = "Описание заметки 2" },
-            //     new Note { Name = "Заметка 3", Description = "Описание заметки 3" }
-            // };
+            InitializeComponent();            
             dContext = new DContext();
             DataContext = dContext;
 
@@ -58,7 +51,7 @@ namespace WPU221_1
         private void rbRus_Checked(object sender, RoutedEventArgs e)
         {
             Title = "RU";
-            //btnCreate.Content = Languages.Message_ru_ru.BtnCreate;
+            btnCreate.Content = Languages.Message_ru_ru.BtnCreate;
         }
 
         private void rbEng_Checked(object sender, RoutedEventArgs e)

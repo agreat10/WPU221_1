@@ -16,18 +16,18 @@ using WPU221_1.Model;
 namespace WPU221_1
 {
     /// <summary>
-    /// Логика взаимодействия для Window_Create.xaml
+    /// Логика взаимодействия для Window_Update.xaml
     /// </summary>
-    public partial class Window_Create : Window
+    public partial class Window_Update : Window
     {
-        public Window_Create(Note note)
+        public Window_Update(Note note)
         {
             InitializeComponent();
             tbName.Text = note.Name;
             tbDescription.Text = note.Description;
         }
 
-        private void btnCreates_Click(object sender, RoutedEventArgs e)
+        private void btnUpdates_Click(object sender, RoutedEventArgs e)
         {
 
         }

@@ -16,10 +16,16 @@ namespace WPU221_1.Controller
         public NoteController(string str, Note selectedNote)
         {
             _selectedNote = selectedNote;
-            _str = str;
-            if (str=="Create") { Create(); }
-            else if(str == "Update") { Update(); }
-            else if (str == "Delete") { Delete(); }
+            _str = str;            
+            switch (_str)
+            {
+                case "Create": { Create(); break; }
+                case "Update": { Update(); break; }
+                case "Delete": { Delete(); break; }
+
+                default:
+                    break;
+            }
         }
 
         private void Delete()
@@ -28,14 +34,14 @@ namespace WPU221_1.Controller
         }
 
         private void Update()
-        {
-            MessageBox.Show($"Update, {_selectedNote.Name}");
+        {            
+            Window_Update wu = new Window_Update(_selectedNote);
+            wu.ShowDialog();
         }
 
         private void Create()
-        {
-            //MessageBox.Show($"Create, {_selectedNote.Name}");
-            Window_Create wc = new Window_Create();
+        {            
+            Window_Create wc = new Window_Create(_selectedNote);
             wc.ShowDialog();
         }
     }

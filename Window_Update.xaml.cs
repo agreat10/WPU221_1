@@ -20,7 +20,7 @@ namespace WPU221_1
     /// </summary>
     public partial class Window_Update : Window
     {
-        Note _notes;
+        Note _notes; 
         public Window_Update(Note note, bool Lang)
         {
             InitializeComponent();

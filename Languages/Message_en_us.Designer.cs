@@ -70,11 +70,47 @@ namespace WPU221_1.Languages {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Delete.
+        /// </summary>
+        public static string BtnDelete {
+            get {
+                return ResourceManager.GetString("BtnDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Cancel.
+        /// </summary>
+        public static string BtnNo {
+            get {
+                return ResourceManager.GetString("BtnNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Update.
         /// </summary>
         public static string BtnUpdate {
             get {
                 return ResourceManager.GetString("BtnUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Description.
+        /// </summary>
+        public static string DescriptionNote {
+            get {
+                return ResourceManager.GetString("DescriptionNote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Name note.
+        /// </summary>
+        public static string NameNote {
+            get {
+                return ResourceManager.GetString("NameNote", resourceCulture);
             }
         }
     }

@@ -21,12 +21,22 @@ namespace WPU221_1
     public partial class Window_Update : Window
     {
         Note _notes;
-        public Window_Update(Note note)
+        public Window_Update(Note note, bool Lang)
         {
             InitializeComponent();
             tbName.Text = note.Name;
             tbDescription.Text = note.Description;
             _notes = note;
+            if (Lang == true)
+            {
+                btnUpdates.Content = Languages.Message_ru_ru.BtnUpdate;
+                btnNo.Content = Languages.Message_ru_ru.BtnNo;
+            }
+            else
+            {
+                btnUpdates.Content = Languages.Message_en_us.BtnUpdate;
+                btnNo.Content = Languages.Message_en_us.BtnNo;
+            }
         }
 
         private void btnUpdates_Click(object sender, RoutedEventArgs e)

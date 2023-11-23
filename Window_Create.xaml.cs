@@ -20,11 +20,29 @@ namespace WPU221_1
     /// </summary>
     public partial class Window_Create : Window
     {
-        public Window_Create(Note note)
+        public Window_Create(bool Lang)
         {
             InitializeComponent();
-            tbName.Text = note.Name;
-            tbDescription.Text = note.Description;
+            
+            
+            if(Lang == true)
+            {
+                btnCreates.Content = Languages.Message_ru_ru.BtnCreate;
+                btnNo.Content = Languages.Message_ru_ru.BtnNo;
+                tbName.Text = "Новая заметка";
+                tbDescription.Text = "Новое описание заметки";
+                tblockName.Text = Languages.Message_ru_ru.NameNote;
+                tblockDescription.Text = Languages.Message_ru_ru.DescriptionNote;
+            }
+            else
+            {
+                btnCreates.Content = Languages.Message_en_us.BtnCreate;
+                btnNo.Content = Languages.Message_en_us.BtnNo;
+                tbName.Text = "New note";
+                tbDescription.Text = "New note description";
+                tblockName.Text = Languages.Message_en_us.NameNote;
+                tblockDescription.Text = Languages.Message_en_us.DescriptionNote;
+            }
         }
 
         private void btnCreates_Click(object sender, RoutedEventArgs e)
@@ -38,7 +56,7 @@ namespace WPU221_1
                 };
                 db.Notes.Add(note);
                 db.SaveChanges();
-                //var notes = db.Notes.ToList();
+                
             }
             this.Close();
         }

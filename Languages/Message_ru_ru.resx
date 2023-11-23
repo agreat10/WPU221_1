@@ -120,7 +120,19 @@
   <data name="BtnCreate" xml:space="preserve">
     <value>Создать</value>
   </data>
+  <data name="BtnDelete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="BtnNo" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
   <data name="BtnUpdate" xml:space="preserve">
     <value>Изменить</value>
+  </data>
+  <data name="DescriptionNote" xml:space="preserve">
+    <value>Описание заметки</value>
+  </data>
+  <data name="NameNote" xml:space="preserve">
+    <value>Название заметки</value>
   </data>
 </root>

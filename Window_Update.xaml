@@ -23,7 +23,7 @@
                     Orientation="Horizontal"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-                <Button x:Name="btnCreates"
+                <Button x:Name="btnUpdates"
                     Content="Изменить" 
                     Width="100" 
                     Height="35" 

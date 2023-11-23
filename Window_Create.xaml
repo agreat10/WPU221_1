@@ -11,13 +11,14 @@
         WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel>
-            <TextBlock Text="Название заметки"
+            <TextBlock x:Name="tblockName"
+                        Text="Название заметки"
                        Margin="10"/>
             <TextBox x:Name="tbName" 
                      Width="300"
                      Margin="10"
                      HorizontalAlignment="Left"/>
-            <TextBlock Text="Заметка"
+            <TextBlock Text="Заметка" x:Name="tblockDescription"
                        Margin="10"/>
             <TextBox x:Name="tbDescription" 
                      Height="200"

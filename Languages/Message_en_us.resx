@@ -120,7 +120,19 @@
   <data name="BtnCreate" xml:space="preserve">
     <value>Create</value>
   </data>
+  <data name="BtnDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="BtnNo" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="BtnUpdate" xml:space="preserve">
     <value>Update</value>
+  </data>
+  <data name="DescriptionNote" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="NameNote" xml:space="preserve">
+    <value>Name note</value>
   </data>
 </root>

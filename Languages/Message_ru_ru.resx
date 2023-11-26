@@ -135,4 +135,7 @@
   <data name="NameNote" xml:space="preserve">
     <value>Название заметки</value>
   </data>
+  <data name="TbLabel" xml:space="preserve">
+    <value>Мои заметки</value>
+  </data>
 </root>

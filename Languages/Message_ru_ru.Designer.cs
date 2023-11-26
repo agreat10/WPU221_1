@@ -113,5 +113,14 @@ namespace WPU221_1.Languages {
                 return ResourceManager.GetString("NameNote", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Мои заметки.
+        /// </summary>
+        public static string TbLabel {
+            get {
+                return ResourceManager.GetString("TbLabel", resourceCulture);
+            }
+        }
     }
 }

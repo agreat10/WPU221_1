@@ -47,10 +47,12 @@ namespace WPU221_1
         private void rbRus_Checked(object sender, RoutedEventArgs e)
         {
             Lang = true;
-            Title = "Заметки";            
+            Title = "Заметки";
+            if (btnCreate == null) return;
             btnCreate.Content = Languages.Message_ru_ru.BtnCreate;
             btnUpdate.Content = Languages.Message_ru_ru.BtnUpdate;
             btnDelete.Content = Languages.Message_ru_ru.BtnDelete;
+            tbLabel.Text = Languages.Message_ru_ru.TbLabel;
         }
 
         private void rbEng_Checked(object sender, RoutedEventArgs e)
@@ -60,6 +62,7 @@ namespace WPU221_1
             btnCreate.Content = Languages.Message_en_us.BtnCreate;
             btnUpdate.Content = Languages.Message_en_us.BtnUpdate;
             btnDelete.Content = Languages.Message_en_us.BtnDelete;
+            tbLabel.Text = Languages.Message_en_us.TbLabel;
         }
 
         private void btnCreate_Click(object sender, RoutedEventArgs e)

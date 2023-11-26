@@ -29,13 +29,31 @@ namespace WPU221_1.Controller
                 default:
                     break;
             }
-
         }
 
         private void Delete()
         {
+            List<string> lang = new List<string>();
             if (_selectedNote == null) return;
-            MessageBoxResult result = MessageBox.Show("Вы уверены, что хотите удалить это?", "Подтверждение удаления", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if(_Lang == true)
+            {
+                lang.Add("Вы уверены, что хотите удалить это?");
+                lang.Add("Подтверждение удаления");
+                lang.Add("Удаление выполнено!");
+                lang.Add("Успех");
+                lang.Add("Удаление отменено.");
+                lang.Add("Успех");
+            }
+            else
+            {
+                lang.Add("Are you sure you want to delete this?");
+                lang.Add("Confirmation of deletion");
+                lang.Add("Deletion completed!");
+                lang.Add("Success");
+                lang.Add("Deletion canceled.");
+                lang.Add("Success");
+            }
+            MessageBoxResult result = MessageBox.Show(lang[0], lang[1], MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
             {
                 // Логика удаления здесь
@@ -53,14 +71,13 @@ namespace WPU221_1.Controller
                         MessageBox.Show(ex.ToString());
                     }
                 }
-                MessageBox.Show("Удаление выполнено!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(lang[2], lang[3], MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
-                MessageBox.Show("Удаление отменено.", "Отмена", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(lang[4], lang[5], MessageBoxButton.OK, MessageBoxImage.Warning);
             }
 
-            //MessageBox.Show($"Delete, {_selectedNote.Name}");
         }
 
         private void Update()

@@ -135,4 +135,7 @@
   <data name="NameNote" xml:space="preserve">
     <value>Name note</value>
   </data>
+  <data name="TbLabel" xml:space="preserve">
+    <value>My notes</value>
+  </data>
 </root>

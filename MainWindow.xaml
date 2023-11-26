@@ -5,8 +5,168 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPU221_1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Simplenote" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <ControlTemplate TargetType="Button" x:Key="BtnTemplate">
+            <Border x:Name="buttonBorder" CornerRadius="10" BorderBrush="Black" 
+                    Margin="2" BorderThickness="2" Background="{TemplateBinding Background}">
+                <ContentControl HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                Content="{TemplateBinding Content}" FontSize="20"/>
+            </Border>
+        </ControlTemplate>
+    </Window.Resources>
     <Grid>
-        <Button x:Name="qqq"/>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="DarkBlue" Offset="0.0"/>
+                    <GradientStop Color="LightCyan" Offset="0.15"/>
+                    <GradientStop Color="LightCyan" Offset="0.30"/>
+                    <GradientStop Color="LightCyan" Offset="0.50"/>
+                    <GradientStop Color="LightCyan" Offset="0.65"/>
+                    <GradientStop Color="LightCyan" Offset="0.8"/>
+                    <GradientStop Color="DarkBlue" Offset="1."/>
+                </LinearGradientBrush.GradientStops>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="0.3*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="0.7*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <!-- Первая строка -->
+        <TextBlock Grid.Row="0" x:Name="tbLabel" Text="Мои заметки" FontSize ="20" FontFamily="Bookman Old Style" FontStyle="Italic" Foreground ="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <!-- Вторая строка 
+        -->
+
+        <ListBox x:Name="lbMenu"  Grid.Column="0" Grid.Row="1" DisplayMemberPath="Name" SelectionChanged="lbMenu_SelectionChanged"
+					SelectedIndex="0"  Foreground ="Black" FontSize="20" FontFamily="Bookman Old Style" FontStyle="Italic" Background="LightCyan">
+        </ListBox>
+
+
+
+        <TextBox x:Name="tbInfo"
+                 Grid.Column="1"
+                 Grid.Row="1" 
+                 Text="{Binding ElementName=lbMenu, Path=SelectedItem.Description}" 
+                 IsReadOnly="True" Foreground="Black" Background="LightCyan"
+                  FontSize="20"
+                    FontFamily="Bookman Old Style" TextWrapping="Wrap"
+                    FontStyle="Italic"
+                 ScrollViewer.VerticalScrollBarVisibility="Auto">
+
+        </TextBox>
+        <!-- Третья строка -->
+        <StackPanel Orientation="Horizontal"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" >
+            <RadioButton Content="Русский" x:Name="rbRus" Checked="rbRus_Checked" IsChecked="True" Margin="10" Foreground ="White" FontSize="20" FontFamily="Bookman Old Style" FontStyle="Italic"/>
+            <RadioButton Content="English" x:Name="rbEng" Checked="rbEng_Checked" Margin="10" Foreground ="White" FontSize="20" FontFamily="Bookman Old Style" FontStyle="Italic"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+
+
+
+            <!--<Button x:Name="btnCreate" Content="Создать" Width="105" Height="60" Margin="15,0,40,15"
+                    Click="btnCreate_Click" Background="Lime" Template="{StaticResource BtnTemplate}"
+                    MouseEnter="btnCreate_MouseEnter" MouseLeave="btnCreate_MouseLeave" />-->
+
+            <Button x:Name="btnCreate" Content="Создать" Width="105" Height="50" Margin="20,0"
+                    Click="btnCreate_Click" Background="GreenYellow" Template="{StaticResource BtnTemplate}">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Width" To="150" Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Width" To="100" Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+
+
+
+
+            <Button x:Name="btnUpdate" Content="Изменить" Width="105" Height="50" Margin="20,0"
+                    Click="btnUpdate_Click" Background="Yellow" Template="{StaticResource BtnTemplate}">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Width" To="150" Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Width" To="100" Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+
+            <Button  x:Name="btnDelete" Content="Удалить" Width="105" Height="50" Margin="20,0"
+                    Click="btnDelete_Click" Background="OrangeRed" Template="{StaticResource BtnTemplate}">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Width" To="150" Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Width" To="100" Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+
+
+
+            <!--<Button x:Name="btnUpdate" Content="Изменить" Width="105" Height="60" Margin="40,0,40,15"
+                    Click="btnUpdate_Click" Background="Yellow" Template="{StaticResource BtnTemplate}" 
+                    MouseEnter="btnCreate_MouseEnter" MouseLeave="btnCreate_MouseLeave"/>-->
+
+            <!--<Button x:Name="btnDelete" Content="Удалить" Width="105" Height="60" Margin="40,0,40,15"
+                    Click="btnDelete_Click" Background="Crimson" Template="{StaticResource BtnTemplate}"
+                    MouseEnter="btnCreate_MouseEnter" MouseLeave="btnCreate_MouseLeave"/>-->
+        </StackPanel>
+
     </Grid>
+
 </Window>

@@ -117,7 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="buttonres" xml:space="preserve">
-    <value>Button</value>
+  <data name="BtnCreate" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="BtnDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="BtnNo" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="BtnUpdate" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="DescriptionNote" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="NameNote" xml:space="preserve">
+    <value>Name note</value>
+  </data>
+  <data name="TbLabel" xml:space="preserve">
+    <value>My notes</value>
   </data>
 </root>

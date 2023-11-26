@@ -8,31 +8,34 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Model\" />
-    <Folder Include="Controller\" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Languages\Message.Designer.cs">
+    <Compile Update="Languages\Message_en_us.Designer.cs">
+      <DependentUpon>Message_en_us.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Message.resx</DependentUpon>
     </Compile>
-    <Compile Update="Languages\Message_en.Designer.cs">
+    <Compile Update="Languages\Message_ru_ru.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Message_en.resx</DependentUpon>
+      <DependentUpon>Message_ru_ru.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Languages\Message.resx">
+    <EmbeddedResource Update="Languages\Message_en_us.resx">
+      <LastGenOutput>Message_en_us.Designer.cs</LastGenOutput>
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Message.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="Languages\Message_en.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Message_en.Designer.cs</LastGenOutput>
+    <EmbeddedResource Update="Languages\Message_ru_ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Message_ru_ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 
